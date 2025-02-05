@@ -1,0 +1,27 @@
+
+import java.util.Scanner;
+class Check_lower_upper_digit_Special{
+    String check_case(char ch){
+        int  asciiVal = (int)ch;
+        if ((asciiVal >= 48) && (asciiVal <= 57))
+            return "digit";
+        else if ((asciiVal >= 65) && (asciiVal <= 90))
+            return "upper case";
+        else if ((asciiVal >= 97) && (asciiVal <= 122))
+            return "lower case";
+        else if (((asciiVal >= 0) && (asciiVal <= 47)) || ((asciiVal >= 58) && (asciiVal <= 64)) || ((asciiVal >= 91) && (asciiVal <= 96)) || ((asciiVal >= 123) && (asciiVal <= 127)))
+            return "special character";
+        else
+            return "unknown";
+    }
+}
+public class Demo040 {
+    public static void main(String[] args) {
+        Check_lower_upper_digit_Special obj = new Check_lower_upper_digit_Special();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a char");
+        char ch = sc.next().charAt(0);
+        String res = obj.check_case(ch);
+        System.out.println(res);
+    }
+}
